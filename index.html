@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Patricia's Colorful Threads — Hand-Dyed Wearable Art</title>
+<meta name="description" content="One-of-one hand-dyed wearable art. Tops, aprons, baby-wearing wraps, and custom-dye commissions made by Patricia." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF6EF;
+    --surface:#EDE3D2;
+    --ink:#1F1B16;
+    --muted:#6B6358;
+    --line:#E6DCC8;
+    --accent:#C25A3C;       /* terracotta CTA */
+    --accent-ink:#8C3A22;
+    --teal:#3B6B6B;         /* dusty teal */
+    --radius:14px;
+    --max:1280px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.01em;line-height:1.1}
+  h1{font-size:clamp(2.4rem,5.5vw,4.8rem)}
+  h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+  h3{font-size:1.15rem;font-weight:500}
+  .container{max-width:var(--max);margin:0 auto;padding:0 24px}
+  .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:600;font-size:.92rem;letter-spacing:.02em;transition:.2s;border:1px solid transparent;cursor:pointer}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+  .eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);font-weight:600}
+
+  /* ANNOUNCEMENT */
+  .announce{background:var(--ink);color:var(--bg);text-align:center;font-size:.82rem;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px}
+  .announce span{margin:0 18px;opacity:.85}
+
+  /* NAV */
+  header.site{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 24px;max-width:var(--max);margin:0 auto}
+  .nav ul{display:flex;gap:28px;list-style:none;font-size:.92rem;font-weight:500}
+  .nav ul a{padding:6px 0;border-bottom:1px solid transparent}
+  .nav ul a:hover{border-color:var(--ink)}
+  .brand{font-family:'Fraunces',serif;font-size:1.4rem;text-align:center;font-weight:600;letter-spacing:.01em}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-size:.62rem;letter-spacing:.32em;color:var(--muted);text-transform:uppercase;margin-top:2px;font-weight:500}
+  .nav-icons{display:flex;justify-content:flex-end;gap:18px;font-size:.9rem;font-weight:500}
+
+  /* HERO */
+  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(31,27,22,.05),rgba(31,27,22,.55)),url('https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_1fd86bb1-b027-44da-8b02-629b8557e53e.jpg?height=1931&v=1777046814') center/cover no-repeat;color:#fff}
+  .hero-inner{padding:64px 24px;max-width:var(--max);margin:0 auto;width:100%}
+  .hero h1{max-width:14ch;color:#fff;margin-bottom:18px}
+  .hero p{max-width:42ch;font-size:1.05rem;opacity:.92;margin-bottom:28px}
+  .hero .row{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .btn-ghost{color:#fff;border-color:#fff}
+  .hero .btn-ghost:hover{background:#fff;color:var(--ink)}
+
+  /* TRUST STRIP */
+  .trust{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:22px 24px;max-width:var(--max);margin:0 auto;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);text-align:center;font-weight:500}
+
+  /* SECTION */
+  section.block{padding:90px 0}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;gap:24px;flex-wrap:wrap}
+  .section-head .lead{max-width:48ch;color:var(--muted)}
+
+  /* CATEGORY GRID */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .cat{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;background:var(--surface)}
+  .cat img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+  .cat:hover img{transform:scale(1.05)}
+  .cat-label{position:absolute;left:18px;bottom:18px;color:#fff;font-family:'Fraunces',serif;font-size:1.4rem;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+  .cat-label small{display:block;font-family:Inter,sans-serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;opacity:.85;margin-top:4px;font-weight:500}
+
+  /* PRODUCT GRID */
+  .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .card{background:transparent}
+  .card .img-wrap{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--surface)}
+  .card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+  .card .img-wrap .alt{position:absolute;inset:0;opacity:0}
+  .card:hover .img-wrap .alt{opacity:1}
+  .card:hover .img-wrap .main{opacity:0}
+  .badge{position:absolute;top:12px;left:12px;background:var(--bg);color:var(--ink);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:999px;font-weight:600}
+  .badge.sold{background:var(--ink);color:var(--bg)}
+  .badge.new{background:var(--accent);color:#fff}
+  .card h3{margin-top:14px;font-size:1.05rem}
+  .card .meta{display:flex;justify-content:space-between;align-items:center;margin-top:4px;color:var(--muted);font-size:.92rem}
+  .card .price{color:var(--ink);font-weight:600}
+
+  /* SPLIT — CUSTOM DYE */
+  .split{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+  .split img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+  .split .copy h2{margin:14px 0 18px}
+  .steps{margin:24px 0 28px;display:grid;gap:14px}
+  .steps li{list-style:none;display:flex;gap:14px;align-items:flex-start}
+  .steps span{flex:0 0 30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:'Fraunces',serif;font-size:.95rem}
+
+  /* MEET PATRICIA */
+  .meet{background:var(--surface)}
+  .meet .split{padding:0}
+  .meet .copy h2{margin-bottom:18px;max-width:18ch}
+  .meet .sig{font-family:'Fraunces',serif;font-style:italic;font-size:1.4rem;margin-top:22px}
+
+  /* REVIEWS */
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .stars{color:var(--accent);letter-spacing:2px;margin-bottom:10px}
+  .review p{font-family:'Fraunces',serif;font-size:1.1rem;line-height:1.45;color:var(--ink)}
+  .review .who{margin-top:18px;font-size:.85rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+
+  /* INSTAGRAM */
+  .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .ig-grid a{aspect-ratio:1/1;overflow:hidden;border-radius:8px;background:var(--surface)}
+  .ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .ig-grid a:hover img{transform:scale(1.06)}
+
+  /* NEWSLETTER */
+  .news{background:var(--ink);color:var(--bg);text-align:center;padding:90px 24px}
+  .news h2{color:var(--bg);max-width:20ch;margin:0 auto 14px}
+  .news p{color:#cfc6b6;max-width:48ch;margin:0 auto 28px}
+  .news form{display:flex;gap:10px;justify-content:center;max-width:520px;margin:0 auto;flex-wrap:wrap}
+  .news input{flex:1;min-width:240px;padding:14px 18px;border-radius:999px;border:1px solid #5a5147;background:transparent;color:var(--bg);font:inherit;outline:none}
+  .news input::placeholder{color:#9c9384}
+  .news .fine{margin-top:14px;font-size:.78rem;color:#9c9384}
+
+  /* FOOTER */
+  footer{background:var(--bg);padding:64px 0 28px;border-top:1px solid var(--line)}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+  .foot h4{font-family:'Inter',sans-serif;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:14px;color:var(--muted)}
+  .foot ul{list-style:none;display:grid;gap:8px;font-size:.92rem}
+  .foot a:hover{color:var(--accent)}
+  .foot .brand{text-align:left;font-size:1.6rem}
+  .legal{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px;font-size:.8rem;color:var(--muted);flex-wrap:wrap;gap:12px}
+
+  @media (max-width:900px){
+    .nav{grid-template-columns:auto 1fr auto}
+    .nav ul{display:none}
+    .trust-row{grid-template-columns:repeat(2,1fr);font-size:.72rem}
+    .cats{grid-template-columns:repeat(2,1fr)}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .split{grid-template-columns:1fr;gap:28px}
+    .reviews{grid-template-columns:1fr}
+    .ig-grid{grid-template-columns:repeat(3,1fr)}
+    .foot{grid-template-columns:1fr 1fr;gap:28px}
+    section.block{padding:64px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce">
+  <span>Free US shipping over $75</span>·
+  <span>Each piece is 1 of 1</span>·
+  <span>Now booking custom dyes</span>
+</div>
+
+<header class="site">
+  <nav class="nav">
+    <ul>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#tops">Tops</a></li>
+      <li><a href="#custom">Custom Dye</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="#" class="brand">Patricia's<br><small>Colorful Threads</small></a>
+    <div class="nav-icons">
+      <a href="#">Search</a>
+      <a href="#">Account</a>
+      <a href="#">Bag (0)</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow" style="color:#f7e9d6;margin-bottom:18px">Spring drop · 8 new pieces</div>
+    <h1>Hand-dyed wearable art, made one piece at a time.</h1>
+    <p>Ice-dye tops, aprons and baby-wearing wraps — created in small batches by Patricia. No two pieces are ever the same.</p>
+    <div class="row">
+      <a href="#shop" class="btn btn-primary">Shop the Drop</a>
+      <a href="#custom" class="btn btn-ghost">Order a Custom Dye</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+  <div class="trust-row">
+    <div>Hand-dyed in small batches</div>
+    <div>1-of-1 pieces</div>
+    <div>Free US shipping $75+</div>
+    <div>Custom commissions welcome</div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Shop by</div>
+        <h2>Find your piece.</h2>
+      </div>
+      <a href="#shop" class="btn btn-ghost">View all 12 pieces →</a>
+    </div>
+    <div class="cats">
+      <a class="cat" href="#tops">
+        <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_4fcf8c0e-328f-4414-bbde-d906e93e070f.jpg?v=1776734650&width=900" alt="Tops">
+        <div class="cat-label"><small>Shop</small>Tops & Tanks</div>
+      </a>
+      <a class="cat" href="#shop">
+        <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_ca0d9caa-9dca-4b9d-8133-40946f46e730.jpg?v=1776779283&width=900" alt="Aprons">
+        <div class="cat-label"><small>Shop</small>Aprons</div>
+      </a>
+      <a class="cat" href="#shop">
+        <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_40c5d7cc-0322-49aa-a793-a118b7dfa817.jpg?v=1777051313&width=900" alt="Baby Wearing">
+        <div class="cat-label"><small>Shop</small>Baby Wearing</div>
+      </a>
+      <a class="cat" href="#custom">
+        <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_fc93cf8d-d6d7-492a-9e5f-64851c2feaa1.jpg?v=1777051835&width=900" alt="Custom Dye">
+        <div class="cat-label"><small>Made for you</small>Custom Dye</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="block" id="shop" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">New drop</div>
+        <h2>Just released.</h2>
+      </div>
+      <p class="lead">Each piece is photographed and listed individually. When it's gone, it's gone — that's the whole point of one-of-one.</p>
+    </div>
+
+    <div class="grid-4">
+      <a class="card" href="#" id="tops">
+        <div class="img-wrap">
+          <span class="badge new">1 of 1</span>
+          <img class="main" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_83d66a58-2688-414a-80a1-1009c6788e25.jpg?v=1776779284&width=900" alt="Agate Geode">
+          <img class="alt" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_cb226e17-f931-4020-80f7-ca3d5547e417.jpg?v=1776779283&width=900" alt="Agate Geode alt">
+        </div>
+        <h3>Agate Geode</h3>
+        <div class="meta"><span>Ice-dye tee</span><span class="price">$50</span></div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="img-wrap">
+          <span class="badge new">1 of 1</span>
+          <img class="main" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_ca0d9caa-9dca-4b9d-8133-40946f46e730.jpg?v=1776779283&width=900" alt="Lovely Apron">
+          <img class="alt" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_dfb8e665-fee1-4a37-bf91-be32877559a1.jpg?v=1776779283&width=900" alt="Lovely Apron alt">
+        </div>
+        <h3>Lovely Apron</h3>
+        <div class="meta"><span>Hand-dyed apron</span><span class="price">$25</span></div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="img-wrap">
+          <span class="badge">Last One</span>
+          <img class="main" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_0255c85b-60d6-47ab-9f5f-2d47f530a8c4.jpg?v=1776734650&width=900" alt="Moody Americana Heart">
+          <img class="alt" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_01a76f60-0ca4-4d82-b398-c23808c13964.jpg?v=1776734649&width=900" alt="Moody Americana Heart alt">
+        </div>
+        <h3>Moody Americana Heart</h3>
+        <div class="meta"><span>Ice-dye tank</span><span class="price">$30</span></div>
+      </a>
+
+      <a class="card" href="#">
+        <div class="img-wrap">
+          <span class="badge new">1 of 1</span>
+          <img class="main" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_4fcf8c0e-328f-4414-bbde-d906e93e070f.jpg?v=1776734650&width=900" alt="Supernova">
+          <img class="alt" src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_85d1c0cf-4ba7-4671-8f77-3f48e84a3ba2.jpg?v=1776734650&width=900" alt="Supernova alt">
+        </div>
+        <h3>Supernova</h3>
+        <div class="meta"><span>Ice-dye tank</span><span class="price">$30</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM DYE -->
+<section class="block" id="custom" style="background:var(--surface)">
+  <div class="container">
+    <div class="split">
+      <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_6962f1e4-5122-418a-8d5e-9bcde9772e51.jpg?height=1400&v=1777046134" alt="Custom dye process">
+      <div class="copy">
+        <div class="eyebrow">Made for you</div>
+        <h2>Commission a custom dye.</h2>
+        <p>Send Patricia a piece you already love — or pick from her blanks library — and she'll dye it in the palette you choose. Perfect for weddings, anniversaries, baby showers, and gifts that no one else will own.</p>
+        <ul class="steps">
+          <li><span>1</span><div><strong>Tell her your vision.</strong><br><span style="color:var(--muted)">Garment type, color palette, mood. Photos welcome.</span></div></li>
+          <li><span>2</span><div><strong>Approve the quote.</strong><br><span style="color:var(--muted)">Custom pieces start at $45. Turnaround 2–3 weeks.</span></div></li>
+          <li><span>3</span><div><strong>Wear your one-of-one.</strong><br><span style="color:var(--muted)">Ships with care instructions and a hand-written note.</span></div></li>
+        </ul>
+        <a href="#" class="btn btn-primary">Request a Custom Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET PATRICIA -->
+<section class="block meet" id="about">
+  <div class="container">
+    <div class="split">
+      <div class="copy">
+        <div class="eyebrow">Meet the maker</div>
+        <h2>Hi, I'm Patricia.</h2>
+        <p>I've been dyeing fabric for over a decade — first as a way to make my kids' baby-wearing wraps feel like ours, and then because people kept asking where I got them. Today every piece in this shop is dyed, washed, photographed and packed by me, in small batches, in my home studio.</p>
+        <p style="margin-top:14px">I work in ice-dye because I love that I can never quite predict the result. The colors find their own path. That's the part I want you to wear.</p>
+        <div class="sig">— Patricia</div>
+        <a href="#" class="btn btn-ghost" style="margin-top:24px">Read the full story</a>
+      </div>
+      <img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_92d781e8-8b6a-4277-80be-c1fd9dce8701.jpg?v=1777046631&width=1400" alt="Patricia at work">
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="block">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Customer love</div>
+        <h2>Worn & loved.</h2>
+      </div>
+    </div>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"It's the kind of piece you reach for the second it's clean. The color is even better in person — looks like a watercolor."</p>
+        <div class="who">— Megan R. · Agate Geode Tee</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"I commissioned a custom wrap for my daughter's first birthday. Patricia walked me through every step and the result is a family heirloom."</p>
+        <div class="who">— Sara L. · Custom Woven Wrap</div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"I bought the apron as a gift for my mom and ended up ordering one for myself. The fabric is heavy and beautifully made."</p>
+        <div class="who">— Jess T. · Lovely Apron</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Follow along</div>
+        <h2>@patriciascolorfulthreads</h2>
+      </div>
+      <a href="https://www.instagram.com/patriciascolorfulthreads/" class="btn btn-ghost">Follow on Instagram →</a>
+    </div>
+    <div class="ig-grid">
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_83d66a58-2688-414a-80a1-1009c6788e25.jpg?v=1776779284&width=600" alt=""></a>
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_dfb8e665-fee1-4a37-bf91-be32877559a1.jpg?v=1776779283&width=600" alt=""></a>
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_85d1c0cf-4ba7-4671-8f77-3f48e84a3ba2.jpg?v=1776734650&width=600" alt=""></a>
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_01a76f60-0ca4-4d82-b398-c23808c13964.jpg?v=1776734649&width=600" alt=""></a>
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_2b30a8f2-7bbc-4e9a-8747-c7b400f87965.jpg?v=1777051315&width=600" alt=""></a>
+      <a href="#"><img src="https://patscolorfulthreads.com/cdn/shop/files/rn-image_picker_lib_temp_0826d0ed-7499-4c3e-9b72-61481c21ec14.jpg?v=1777046874&width=600" alt=""></a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="news">
+  <div class="eyebrow" style="color:#cfc6b6;margin-bottom:14px">Drop list</div>
+  <h2>Be first when a new drop goes live.</h2>
+  <p>Most pieces sell within hours. Join the list for a 24-hour early window, plus 10% off your first order.</p>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Welcome ✓'">
+    <input type="email" placeholder="you@email.com" required>
+    <button class="btn btn-primary" type="submit">Join the list</button>
+  </form>
+  <div class="fine">No spam. One drop email a month, plus the occasional behind-the-scenes.</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div>
+        <div class="brand">Patricia's<br><small>Colorful Threads</small></div>
+        <p style="color:var(--muted);margin-top:14px;max-width:32ch">Hand-dyed wearable art from a small home studio. One of one, made with care.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">All Pieces</a></li>
+          <li><a href="#">Tops & Tanks</a></li>
+          <li><a href="#">Aprons</a></li>
+          <li><a href="#">Baby Wearing</a></li>
+          <li><a href="#">Gift Cards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Guide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Custom Dye Quote</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#">About Patricia</a></li>
+          <li><a href="#">Journal</a></li>
+          <li><a href="https://www.instagram.com/patriciascolorfulthreads/">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/18KuaejDzW/">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div>© Patricia's Colorful Threads. All rights reserved.</div>
+      <div>Privacy · Terms · Accessibility</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
